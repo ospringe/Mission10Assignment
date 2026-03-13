@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission10Assignment.Data;
 
@@ -25,6 +26,7 @@ public class Bowler
     public string BowlerPhoneNumber { get; set; }
     public int TeamID { get; set; }
     
-    public Team Team { get; set; }
+    [ForeignKey("TeamID")]
+    public Team? Team { get; set; }
     
 }

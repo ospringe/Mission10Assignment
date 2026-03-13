@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission10Assignment.Data;
 
 namespace Mission10Assignment.Controllers
@@ -18,7 +19,9 @@ namespace Mission10Assignment.Controllers
         [HttpGet(Name = "GetBowlingLeague")]
         public IEnumerable<Bowler> Get()
         {
-            var bowlerList = _bowlerContext.Bowlers.ToList();
+            var bowlerList = _bowlerContext.Bowlers.Include(b => b.Team)
+                .Where(b => b.Team.TeamName == "Marlins" || b.Team.TeamName == "Sharks")
+                .ToList();
 
             return (bowlerList);
         }

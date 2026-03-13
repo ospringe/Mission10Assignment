@@ -9,4 +9,8 @@ export type bowler = {
     bowlerZip: number;
     bowlerPhoneNumber: string;
     teamID: number;
+    team: {
+        teamID: number;
+        teamName: string;
+    };
 };
