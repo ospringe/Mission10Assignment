@@ -19,6 +19,7 @@ namespace Mission10Assignment.Controllers
         [HttpGet(Name = "GetBowlingLeague")]
         public IEnumerable<Bowler> Get()
         {
+            // Calling the data from the database and filtering for the bowlers that are on either the Sharks or Marlins teams
             var bowlerList = _bowlerContext.Bowlers.Include(b => b.Team)
                 .Where(b => b.Team.TeamName == "Marlins" || b.Team.TeamName == "Sharks")
                 .ToList();

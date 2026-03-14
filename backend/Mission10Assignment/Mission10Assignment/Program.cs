@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Registers the BowlerDbContext with the application and tells it to use a SQLite database, using the connection string named "BowlerConnection" from appsettings.json
 builder.Services.AddDbContext<BowlerDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("BowlerConnection")));
 

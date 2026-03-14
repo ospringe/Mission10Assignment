@@ -1,3 +1,4 @@
+// Component for the heading section of the website, which includes the main title and a subtitle describing the purpose of the website.
 function Heading() {
     return (
         <section className="heading-section">

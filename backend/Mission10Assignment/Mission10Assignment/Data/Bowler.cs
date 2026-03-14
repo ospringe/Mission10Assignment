@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission10Assignment.Data;
 
+// Setting all the columns of the Bowlers table
 public class Bowler
 {
     [Key]

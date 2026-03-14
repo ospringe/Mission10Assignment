@@ -5,6 +5,7 @@ import BowlerList from './BowlerList'
 function App() {
   return (
     <div className="page-container">
+      {/* Calling the components */}
       <Heading />
       <BowlerList />
     </div>
